@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-hud-bg text-hud-textBright font-sans;
+    background-image: 
+      radial-gradient(rgba(0, 240, 255, 0.03) 1px, transparent 0),
+      linear-gradient(to bottom, #070b14 0%, #0a101f 100%);
+    background-size: 24px 24px, 100% 100%;
+    min-height: 100vh;
+  }
+
+  /* Custom subtle scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #070b14;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1f2f53;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #2a4173;
+  }
+}
+
+@layer utilities {
+  .hud-border {
+    border: 1px solid #1f2f53;
+    box-shadow: inset 0 0 0 1px rgba(0, 240, 255, 0.05);
+  }
+  
+  .hud-border-cyan {
+    border: 1px solid rgba(0, 240, 255, 0.35);
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.15), inset 0 0 10px rgba(0, 240, 255, 0.05);
+  }
+
+  .hud-border-red {
+    border: 1px solid rgba(239, 68, 68, 0.45);
+    box-shadow: 0 0 18px rgba(239, 68, 68, 0.25), inset 0 0 10px rgba(239, 68, 68, 0.08);
+  }
+
+  .hud-border-amber {
+    border: 1px solid rgba(245, 158, 11, 0.45);
+    box-shadow: 0 0 15px rgba(245, 158, 11, 0.2), inset 0 0 8px rgba(245, 158, 11, 0.05);
+  }
+
+  .hud-corner-bracket {
+    position: relative;
+  }
+  .hud-corner-bracket::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: 8px;
+    height: 8px;
+    border-top: 2px solid #00f0ff;
+    border-left: 2px solid #00f0ff;
+  }
+  .hud-corner-bracket::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    right: -1px;
+    width: 8px;
+    height: 8px;
+    border-bottom: 2px solid #00f0ff;
+    border-right: 2px solid #00f0ff;
+  }
+
+  .hud-corner-bracket-red::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: 8px;
+    height: 8px;
+    border-top: 2px solid #ef4444;
+    border-left: 2px solid #ef4444;
+  }
+  .hud-corner-bracket-red::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    right: -1px;
+    width: 8px;
+    height: 8px;
+    border-bottom: 2px solid #ef4444;
+    border-right: 2px solid #ef4444;
+  }
+
+  .font-tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}
